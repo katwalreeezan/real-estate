@@ -3,9 +3,9 @@ import Home from './components/Home'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Realestate from './components/Realestate'
-import Construction from './components/construction'
 import Consultancy from './components/Consultancy'
 import Contact from './components/Contact'
+import Construction from './components/construction'
 
 function App() {
 

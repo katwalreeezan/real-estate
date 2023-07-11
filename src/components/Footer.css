@@ -1,0 +1,9 @@
+.bottom-banner{
+  
+    background-image: url(./images/bottom-banner.png);
+    width: 100%;
+    height: 104vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+ }

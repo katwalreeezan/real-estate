@@ -2,6 +2,8 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { MagnifyingGlass } from "phosphor-react";
+import Footer from "./Footer";
+import Apartment from "./Apartment";
 
 const Home = () => {
   return (
@@ -9,7 +11,7 @@ const Home = () => {
       <div className="real-estate position-relative">
         <div className="d-flex justify-content-between align-items-center text-white menu ">
           <div className="d-flex align-items-center ">
-          <img src="./images/logo.png" className="d-block logo mx-4"/>
+            <img src="./images/logo.png" className="d-block logo mx-4" />
           </div>
           <div className="d-flex align-items-center px-5 justify-content-between">
             <Link
@@ -67,10 +69,15 @@ const Home = () => {
         <div className="bottom ">
           <span className="bottomtitle ">Let Us match you with</span>
           <br />
-          <span className="bottomtitle color">your perfect rental</span><br/>
-         <button className='btn btn-outline-primary text-dark rounded-5 mt-2'>Learn More</button>
+          <span className="bottomtitle color">your perfect rental</span>
+          <br />
+          <button className="btn btn-outline-primary text-dark rounded-5 mt-2">
+            Learn More
+          </button>
         </div>
       </div>
+    <Apartment/>
+      <Footer/>
     </div>
   );
 };
