@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { MagnifyingGlass } from "phosphor-react";
 import Footer from "./Footer";
 import Apartment from "./Apartment";
+import axios from "../API/axios";
 
 const Home = () => {
+  useEffect(() => {
+    const fetchInfo = async () => {
+      try {
+        const response = await axios.get("/content");
+        // Process the response data as needed
+        console.log(response.data[0].heading); // Log the heading
+        setInfo(response.data[0].heading);
+      } catch (error) {
+        // Handle errors
+        console.error(error);
+      }
+    };
+
+    fetchInfo();
+  }, []);
+
+  const [info, setInfo] = useState('');
+  console.log(info)
+
   return (
     <div>
       <div className="real-estate position-relative">
@@ -52,7 +72,7 @@ const Home = () => {
         </div>
 
         <div className="absolute">
-          <p className="text-white title col-8">Find Your Place of Dream</p>
+          <p className="text-white title col-8">{info}</p>
           <p className="text-white fw-light paragraph">
             We are glad to have you around. Feel
             <br /> free to browse our website
@@ -67,7 +87,7 @@ const Home = () => {
           </div>
         </div>
         <div className="bottom ">
-          <span className="bottomtitle ">Let Us match you with</span>
+          <span className="bottomtitle ">{info.heading}</span>
           <br />
           <span className="bottomtitle color">your perfect rental</span>
           <br />
@@ -76,8 +96,8 @@ const Home = () => {
           </button>
         </div>
       </div>
-    <Apartment/>
-      <Footer/>
+      <Apartment />
+      <Footer />
     </div>
   );
 };
