@@ -41,51 +41,56 @@ const Login = () => {
       setAuth(response?.data?.data?.token); // Remove JSON.stringify() since it's already a string
       setUser("");
       setPwd("");
-      navigate("/dashboard")
+      navigate("/dashboard");
     } catch (err) {
-      setErrMsg(err.message);
+      if (!err.response) {
+        setErrMsg("No server response.");
+      } else if (err.response.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else {
+        setErrMsg("Login Fail.");
+      }
+      errRef.current.focus();
     }
   };
 
   return (
     <>
-      
-        <section>
-          <p
-            ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
-            aria-live="assertive"
-          >
-            {errMsg}
+      <section>
+        <p
+          ref={errRef}
+          className={errMsg ? "errmsg" : "offscreen"}
+          aria-live="assertive"
+        >
+          {errMsg}
+        </p>
+        <h1>Sign In</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            ref={userRef}
+            autoComplete="off"
+            onChange={(e) => setUser(e.target.value)}
+            value={user}
+            required
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            onChange={(e) => setPwd(e.target.value)}
+            value={pwd}
+            required
+          />
+          <button>Sign In</button>
+          <p>
+            Need an account? <br />
+            <a href="#">Sign Up</a>
           </p>
-          <h1>Sign In</h1>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => setUser(e.target.value)}
-              value={user}
-              required
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              onChange={(e) => setPwd(e.target.value)}
-              value={pwd}
-              required
-            />
-            <button>Sign In</button>
-            <p>
-              Need an account? <br />
-              <a href="#">Sign Up</a>
-            </p>
-          </form>
-        </section>
-
+        </form>
+      </section>
     </>
   );
 };

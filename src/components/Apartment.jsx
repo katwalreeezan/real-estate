@@ -8,11 +8,11 @@ const Apartment = () => {
   return (
     <div>
       <h1 className="fw-bold text-center my-4">Apartments Plan</h1>
-      <ul class="nav nav-tabs d-flex justify-content-center " id="myTab" role="tablist">
+      <ul className="nav nav-tabs d-flex justify-content-center " id="myTab" role="tablist">
         <div className=" d-flex ">
-          <li class="nav-item me-5" role="presentation">
+          <li className="nav-item me-5" role="presentation">
             <button
-              class="nav-link active"
+              className="nav-link active"
               id="home-tab"
               data-bs-toggle="tab"
               data-bs-target="#home"
@@ -24,9 +24,9 @@ const Apartment = () => {
               <h5>The Studio</h5>
             </button>
           </li>
-          <li class="nav-item me-5" role="presentation">
+          <li className="nav-item me-5" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="profile-tab"
               data-bs-toggle="tab"
               data-bs-target="#profile"
@@ -38,9 +38,9 @@ const Apartment = () => {
               <h5>Deluxe Portion</h5>
             </button>
           </li>
-          <li class="nav-item me-5" role="presentation">
+          <li className="nav-item me-5" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="contact-tab"
               data-bs-toggle="tab"
               data-bs-target="#contact"
@@ -52,9 +52,9 @@ const Apartment = () => {
               <h5>Penthouse</h5>
             </button>
           </li>
-          <li class="nav-item me-5" role="presentation">
+          <li className="nav-item me-5" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="garden-tab"
               data-bs-toggle="tab"
               data-bs-target="#garden"
@@ -68,9 +68,9 @@ const Apartment = () => {
           </li>
         </div>
       </ul>
-      <div class="tab-content col-lg-8 mx-auto" id="myTabContent">
+      <div className="tab-content col-lg-8 mx-auto" id="myTabContent">
         <div
-          class="tab-pane fade show active"
+          className="tab-pane fade show active"
           id="home"
           role="tabpanel"
           aria-labelledby="home-tab"
@@ -92,7 +92,7 @@ const Apartment = () => {
           </div>
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="profile"
           role="tabpanel"
           aria-labelledby="profile-tab"
@@ -114,7 +114,7 @@ const Apartment = () => {
           </div>
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="contact"
           role="tabpanel"
           aria-labelledby="contact-tab"
@@ -136,7 +136,7 @@ const Apartment = () => {
           </div>
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="garden"
           role="tabpanel"
           aria-labelledby="garden-tab"

@@ -61,7 +61,7 @@ const Home = () => {
             <input
               type="text"
               placeholder="Find a location"
-              class="  border-0 outline-0 d-block"
+              className="  border-0 outline-0 d-block"
             />
             <MagnifyingGlass size={22} />
           </div>
